@@ -22,7 +22,6 @@ services:
       - '35432:5432'
     volumes:
       - db-data:/var/lib/postgresql/data:cached
-      - ../docker-postgresql-multiple-databases:/docker-entrypoint-initdb.d
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U brit"]
       interval: 5s
