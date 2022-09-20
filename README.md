@@ -2,19 +2,19 @@
 
 ## Features
 
-- **FastAPI** with Python 3.8
-- **React 16** with Typescript, Redux, and react-router
-- Postgres
-- SqlAlchemy with Alembic for migrations
+- **FastAPI** with Python 3.10
+- **React Admin** with Typescript
+- Postgres 14
+- SqlModel with Alembic for migrations
 - Pytest for backend tests
 - Jest for frontend tests
-- Perttier/Eslint (with Airbnb style guide)
+- Prettier/Eslint (with Airbnb style guide)
 - Docker compose for easier development
 - Nginx as a reverse proxy to allow backend and frontend on the same port
 
 ## Development
 
-The only dependencies for this project should be docker and docker-compose.
+The only hard dependencies for this project are docker and docker-compose.
 
 ### Quick Start
 
@@ -92,6 +92,7 @@ docker-compose run --rm backend alembic revision -m "create users table" --autog
 ```
 This will detect changes between your model definitions and the database schema and generate
 migrations scripts accordingly.
+
 If you need more control you can also create migrations manually. For more information see
 [Alembic's official documentation](https://alembic.sqlalchemy.org/en/latest/tutorial.html#create-a-migration-script).
 
