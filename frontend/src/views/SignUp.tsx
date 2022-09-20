@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const SignUp: FC = () => {
+export const SignUp = () => {
   const classes = useStyles();
   const history = useHistory();
   const [email, setEmail] = useState<string>('');

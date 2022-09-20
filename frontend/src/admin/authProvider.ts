@@ -1,6 +1,6 @@
 import decodeJwt from 'jwt-decode';
 
-const publicRoutes = ['/signup', '/sign-up']
+const publicRoutes = ['/signup', '/sign-up'];
 
 type loginFormType = {
   username: string;
@@ -48,9 +48,9 @@ const authProvider = {
   checkAuth: () => {
     // quick and dirty, not for production use
     if (publicRoutes.includes(window.location.pathname)) {
-      return Promise.resolve()
+      return Promise.resolve();
     }
-    return localStorage.getItem('token') ? Promise.resolve() : Promise.reject()
+    return localStorage.getItem('token') ? Promise.resolve() : Promise.reject();
   },
   getPermissions: () => {
     const role = localStorage.getItem('permissions');

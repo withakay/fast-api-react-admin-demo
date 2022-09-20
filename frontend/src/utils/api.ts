@@ -1,5 +1,5 @@
-import {BACKEND_URL, ITEM_SUMMARY_URL} from '../config';
-import {fetchUtils} from "react-admin";
+import { BACKEND_URL, ITEM_SUMMARY_URL } from '../config';
+import { fetchUtils } from 'react-admin';
 
 export const getMessage = async () => {
   const response = await fetch(BACKEND_URL);
@@ -22,7 +22,7 @@ const httpClient = async (url: any, options: any = null) => {
   }
   const token = localStorage.getItem('token');
   options.headers.set('Authorization', `Bearer ${token}`);
-  return await fetch(url, options)
+  return await fetch(url, options);
 };
 
 export const getItemSummary = async () => {
