@@ -132,3 +132,11 @@ Or for a specific service:
 docker-compose logs -f name_of_service # frontend|backend|db
 ```
 
+TODO:
+Add `pre-commit-config` to validate commits with
+- mypy
+- black
+- isort
+- flake8 / pylint
+- prettier
+- eslint
