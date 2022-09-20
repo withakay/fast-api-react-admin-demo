@@ -26,16 +26,6 @@ def upgrade():
     )
     op.create_index(op.f("ix_items_id"), "items", ["id"], unique=False)
     op.create_index(op.f("ix_items_name"), "items", ["name"], unique=True)
-
-    op.alter_column(
-        "user", "is_active", existing_type=sa.BOOLEAN(), nullable=True
-    )
-    op.alter_column(
-        "user", "is_superuser", existing_type=sa.BOOLEAN(), nullable=True
-    )
-    op.create_index(op.f("ix_user_email"), "user", ["email"], unique=True)
-    op.create_index(op.f("ix_user_id"), "user", ["id"], unique=False)
-    op.drop_column("user", "address")
     # ### end Alembic commands ###
 
 
@@ -49,14 +39,6 @@ def downgrade():
             autoincrement=False,
             nullable=True,
         ),
-    )
-    op.drop_index(op.f("ix_user_id"), table_name="user")
-    op.drop_index(op.f("ix_user_email"), table_name="user")
-    op.alter_column(
-        "user", "is_superuser", existing_type=sa.BOOLEAN(), nullable=False
-    )
-    op.alter_column(
-        "user", "is_active", existing_type=sa.BOOLEAN(), nullable=False
     )
     op.drop_index(op.f("ix_items_name"), table_name="items")
     op.drop_index(op.f("ix_items_id"), table_name="items")
