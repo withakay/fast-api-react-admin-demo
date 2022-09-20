@@ -16,7 +16,7 @@ class User(UserBase, table=True):
     This is a so called 'table' model, generally this should not
     be used directly via the API.
     """
-    __tablename__ = "user"
+    __tablename__ = "users"
 
     id: Optional[int] = Field(primary_key=True, index=True)
     hashed_password: Optional[str]
